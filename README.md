@@ -3,7 +3,7 @@ API REST criada com Spring Boot e documentada com o Swagger
 
 ## Tecnologias
 - Spring Boot
-- Swagger (documentação)
+- Swagger (documentação) acesso: http://localhost:8080/swagger-ui.html#/
 
-**Comandos de compilação**
+**Comando de compilação**
 - `mvn spring-boot:run` 
