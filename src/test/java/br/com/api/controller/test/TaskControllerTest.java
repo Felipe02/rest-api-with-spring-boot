@@ -140,8 +140,11 @@ public class TaskControllerTest {
 	
 	@Test
 	public void consumingRestTest() throws Exception {
-		mockMvc.perform(get("/api/rondom")).andExpect(status().isOk());
+		mockMvc.perform(get("/api/rondom")).andExpect(status().isOk())
+				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.type", is("success")));
 	}
+
 
 	public Task createNewTask() {
 		Task task = new Task();
