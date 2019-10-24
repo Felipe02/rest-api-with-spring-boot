@@ -14,7 +14,7 @@ public class ConsumingApiRest {
 	private static final String url = "https://gturnquist-quoters.cfapps.io/api/random";
 
 	@Bean
-	public Quote consumingRestApi() throws Exception {
+	public Quote consumingApi() throws Exception {
 		RestTemplate restTemplate = new RestTemplate();
 
 		Quote quote = restTemplate.getForObject(url, Quote.class);
