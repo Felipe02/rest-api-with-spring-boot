@@ -19,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 import br.com.api.entity.Task;
 import br.com.api.repository.TaskRepository;
 import br.com.consumingapirest.ConsumingApiRest;
+import br.com.consumingapirest.entity.Quote;
 import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.ApiResponse;
 
@@ -99,17 +100,15 @@ public class TaskController {
 	}
 	
 	@RequestMapping(value = "/api/rondom", method = RequestMethod.GET, produces = "application/json")
-	public CommandLineRunner consumingApiRest() {
-		ConsumingApiRest consumigApiRest = new ConsumingApiRest();
-		RestTemplate restTemplate = null;
-		
+	public Quote consumingApiRest() {
 		try {
-			return consumigApiRest.run(restTemplate);
+			ConsumingApiRest consumigApiRest = new ConsumingApiRest();
+			return consumigApiRest.consumingRestApi();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
-		
 	}
 
 }
